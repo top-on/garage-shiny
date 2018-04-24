@@ -1,8 +1,10 @@
-# R
+# file types
 .Rproj.user
 .Rhistory
 .RData
 .Ruserdata
+*.Rproj
+*.swp
 
 # data
 data/*
