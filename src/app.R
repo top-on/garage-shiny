@@ -28,26 +28,26 @@ ui <- fluidPage(
 
   sidebarLayout(
     sidebarPanel(
-      selectInput(inputId = "name",
+      selectInput(inputId = "garage_name",
                   label = "Choose a car park:",
                   choices = unique(df_processed$name),
                   selected = "Parkhaus Karstadt")
     ),
     mainPanel(
-      plotOutput(outputId = "distPlot")
+      plotOutput(outputId = "time_series_plot")
     )
   ),
-
+  
   theme = "custom.css"
 )
 
 # SERVER ----
 server <- function(input, output) {
 
-  output$distPlot <- renderPlot({
+  output$time_series_plot <- renderPlot({
 
     df_processed %>%
-      filter(., name == input$name) %>% 
+      filter(., name == input$garage_name) %>% 
       ggplot(data = ., aes(x = time, y = free)) +
       geom_line(aes(group = date), alpha = .3) +
       theme_bw() +
