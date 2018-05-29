@@ -1,7 +1,7 @@
 # file types
 .Rproj.user
 .Rhistory
-.RData
+*.RData
 .Ruserdata
 *.Rproj
 *.swp
