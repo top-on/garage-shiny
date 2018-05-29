@@ -7,4 +7,4 @@
 *.swp
 
 # data
-data/*
+app/data/*
