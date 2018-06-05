@@ -3,7 +3,6 @@
 library(shiny)
 library(dplyr)
 library(lubridate)
-library(RSQLite)
 library(ggplot2)
 
 dir()
@@ -52,7 +51,7 @@ server <- function(input, output) {
       xlab("Time of day") +
       ylab("Free spots") +
       ggtitle(paste0("Free parking spots per day for car park '",
-                     input$name, "'")) +
+                     input$garage_name, "'")) +
       theme(text = element_text(size = 20))
   })
 }

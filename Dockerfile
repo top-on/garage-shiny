@@ -4,5 +4,5 @@ FROM rocker/shiny
 RUN install2.r --error dplyr lubridate ggplot2 hms
 
 
-COPY ./src /srv/shiny-server/
+COPY ./app /srv/shiny-server/
 
