@@ -5,8 +5,6 @@ library(dplyr)
 library(lubridate)
 library(ggplot2)
 
-dir()
-
 # LOAD DATA ----
 load("data/df.Rdata")
 
@@ -16,7 +14,6 @@ df_processed <-
   mutate(., free = as.numeric(free)) %>%
   mutate(., datetime = as_datetime(df$datetime, tz = "Europe/Berlin")) %>%
   mutate(., time = hms::as.hms(datetime))
-
 
 # USER INTERFACE ----
 ui <- fluidPage(
